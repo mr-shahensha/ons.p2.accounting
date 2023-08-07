@@ -1,29 +1,18 @@
 <?php
 ini_set("display_errors", "1");
 error_reporting(E_ALL);
-if(isset($_REQUEST['pnm']))
-{
-$page_title=base64_decode($_REQUEST['pnm']);
-}
-else
-{
-	$page_title="Group Entry";
-}
+
+$page_title="Ledger";
 include "membersonly.inc.php";
 $Members  = new isLogged(1);
 include "header.php";
-function searchForId($id, $array,$chkfld,$sendfld) {
-
-   foreach ($array as $val) 
-   {
-       if ($val[$chkfld]==$id) {
-           return $val[$sendfld];
-       }
-   }
-   return 'root';
-}
+$sld=base64_decode($_REQUEST['sl']);
+$adtl  = new Init_Table();
+$adtl->set_table("main_ledger","sl");
+$row=$adtl->all();
+$row2=$adtl->search(array('sl'=>$sld));
+$pdo= new MainPDO();
 ?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -54,7 +43,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active"><?php echo $page_title;?></li>
+        <li class="active"><?php echo $page_title;?> </li>
       </ol>
     </section>
     <!-- Main content -->
@@ -64,7 +53,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><?php echo $page_title;?></h3>
+              <h3 class="box-title"><?php echo $page_title;?> Edit</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -76,7 +65,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 <label>
 <b><font color="#ed2618"></font>Primary : </b>
 </label>
-<select class="form-control" name="pid" id="pid" required onchange="cgid(this.value)">
+<select class="form-control" name="pid" id="pid" required>
   <option value="">*****Select*****</option>
   <?php
 			
@@ -90,7 +79,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
       foreach ($row as $value) 
       {
 			?>
-  <option value="<?php echo $value['sl'];?>"><?php echo $value['pnm'];?></option>
+  <option <?php if($value['sl']==$row2[0]['pid']){echo "selected";}?> value="<?php echo $value['sl'];?>"><?php echo $value['pnm'];?></option>
       <?php
       }
       ?>
@@ -98,29 +87,38 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 </div>
 <div class="form-group col-md-6">
 <label>
-<b><font color="#ed2618"></font>Group : </b>
+<b><font color="#ed2618"></font>Test Type : </b>
 </label>
-<div id="cgid">
-<select class="form-control" name="gid" id="gid" required>
-  <option value="">*****Select*****</option>
+<input type="text" id="gnm" name="gnm" class="form-control" value="<?php
 
-</select>
-</div>
+$fld3['sl']=$row2[0]['gid'];
+$op3['sl']="=,";
 
+$main_group  = new Init_Table();
+$main_group->set_table("main_group","sl");
+$row3=$main_group->search_custom($fld3,$op3,'',array('sl' => 'ASC'));
+foreach ($row3 as $value3) 
+{
+}
+
+echo $value['gnm'];;
+
+?>" style="width:100%" placeholder="Enter Test Type" required>
 </div>
 <div class="form-group col-md-6">
 <label>
-<b><font color="#ed2618"></font>Ledger Name : </b>
+<b><font color="#ed2618"></font>Test Type : </b>
 </label>
-<input type="text" id="ldg" name="ldg" class="form-control" value="" style="width:100%" placeholder="Enter Ledger Name " required>
+<input type="text" id="gnm" name="gnm" class="form-control" value="<?php echo $row2[0]['ldg'];?>" style="width:100%" placeholder="Enter Test Type" required>
 </div>
 <div class="form-group col-md-12" align="right">
 <br>
-<input type="submit" class="btn btn-success" value="SUBMIT">
+<input type="submit" class="btn btn-warning" value="Update">
 </div>
 </div>
-<input type="hidden" name="table_name" value="main_ledger">	 
+<input type="hidden" name="table_name" value="main_ledger">   
 <input type="hidden" name="page_name" value="ledger.php">  
+<input type="hidden" name="sl" value="<?php echo $sld;?>">  
 
 </form>
 </div>
@@ -128,23 +126,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 </div>
 
 <!-- /.box -->
-</div>  
-	<div class="col-md-12">
-          <!-- general form elements -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title"><?php echo $page_title;?> List</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-              <div class="box-body" id="show">
-			 
-	
-				    </div>
-          <!-- /.box body -->
-        </div>
-          <!-- /.box -->
-	</div>  				  
+</div>   				  
 	</div>
 </section>
     <!-- /.content -->
@@ -203,22 +185,8 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 	
 	<script>
 
-
-
-function show()
-{
-	$('#show').load("ledger_list.php").fadeIn('fast');
-}
-$(document).ready(function()
-{
-show();
-});
-
-    function cgid(value)
-    {
-            $('#cgid').load('calcgid.php?pid='+value).fadeIn('fast');
-    }
 	</script>
+
 
 </body>
 </html>

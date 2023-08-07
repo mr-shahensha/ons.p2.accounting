@@ -7,7 +7,7 @@ $page_title=base64_decode($_REQUEST['pnm']);
 }
 else
 {
-	$page_title="Group Entry";
+	$page_title="Opening Balance";
 }
 include "membersonly.inc.php";
 $Members  = new isLogged(1);
@@ -23,7 +23,6 @@ function searchForId($id, $array,$chkfld,$sendfld) {
    return 'root';
 }
 ?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -69,14 +68,38 @@ function searchForId($id, $array,$chkfld,$sendfld) {
             <!-- /.box-header -->
             <!-- form start -->
               <div class="box-body">
-<form class="form-bordered" action="submit_ledger.php" method="POST">
+<form class="form-bordered" action="submit_openbal.php" method="POST">
 
 <div class="row">
 <div class="form-group col-md-6">
 <label>
-<b><font color="#ed2618"></font>Primary : </b>
+<b><font color="#ed2618"></font>Date: </b>
 </label>
-<select class="form-control" name="pid" id="pid" required onchange="cgid(this.value)">
+<input type="text" readonly  class="form-control" value="<?php echo $date = date('d-m-Y');?>" style="width:100%">
+</div>
+<div class="form-group col-md-6">
+<label>
+<b><font color="#ed2618"></font>Voucher: </b>
+</label>
+<input readonly type="text" id="voucher" name="voucher" class="form-control" value="
+<?php
+$fld['sl']='0';
+$op['sl']=">, ";
+$list  = new Init_Table();
+$list->set_table('main_drcr',"sl");
+$count=$list->row_count_custom($fld,$op,'',array('sl' => 'ASC'));
+date_default_timezone_set("asia/kolkata");
+$year = date('y');
+$month=date('m');
+echo $vou="v".$year.$month.$count;
+?>
+" style="width:100%" placeholder="Enter Amount" required>
+</div>
+<div class="form-group col-md-6">
+<label>
+<b><font color="#ed2618"></font>Ledger : </b>
+</label>
+<select class="form-control" name="lid" id="lid" required>
   <option value="">*****Select*****</option>
   <?php
 			
@@ -84,13 +107,13 @@ function searchForId($id, $array,$chkfld,$sendfld) {
       $op1['sl']=">,";
 
       $list1  = new Init_Table();
-      $list1->set_table("main_primary","sl");
+      $list1->set_table("main_ledger","sl");
       $row=$list1->search_custom($fld1,$op1,'',array('sl' => 'ASC'));
       $pdo= new MainPDO();
       foreach ($row as $value) 
       {
 			?>
-  <option value="<?php echo $value['sl'];?>"><?php echo $value['pnm'];?></option>
+  <option value="<?php echo $value['sl'];?>"><?php echo $value['ldg'];?></option>
       <?php
       }
       ?>
@@ -98,29 +121,30 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 </div>
 <div class="form-group col-md-6">
 <label>
-<b><font color="#ed2618"></font>Group : </b>
+<b><font color="#ed2618"></font>Type : </b>
 </label>
-<div id="cgid">
-<select class="form-control" name="gid" id="gid" required>
-  <option value="">*****Select*****</option>
+<select id="drcr" name="drcr" class="form-control" required>
+<option value="">*****Select*****</option>
+<option value="cr">Credit</option>
+<option value="dr">Debit</option>
 
 </select>
 </div>
-
-</div>
 <div class="form-group col-md-6">
 <label>
-<b><font color="#ed2618"></font>Ledger Name : </b>
+<b><font color="#ed2618"></font>Amount: </b>
 </label>
-<input type="text" id="ldg" name="ldg" class="form-control" value="" style="width:100%" placeholder="Enter Ledger Name " required>
+<input type="text" id="amt" name="amt" class="form-control" value="" style="width:100%" placeholder="Enter Amount" required>
 </div>
 <div class="form-group col-md-12" align="right">
 <br>
 <input type="submit" class="btn btn-success" value="SUBMIT">
 </div>
 </div>
-<input type="hidden" name="table_name" value="main_ledger">	 
-<input type="hidden" name="page_name" value="ledger.php">  
+<input type="hidden" name="type" >	 
+
+<input type="hidden" name="table_name" value="main_drcr">	 
+<input type="hidden" name="page_name" value="openbal.php">  
 
 </form>
 </div>
@@ -207,17 +231,13 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 
 function show()
 {
-	$('#show').load("ledger_list.php").fadeIn('fast');
+	$('#show').load("openbal_list.php?type="+0).fadeIn('fast');
 }
 $(document).ready(function()
 {
 show();
 });
 
-    function cgid(value)
-    {
-            $('#cgid').load('calcgid.php?pid='+value).fadeIn('fast');
-    }
 	</script>
 
 </body>

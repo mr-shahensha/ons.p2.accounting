@@ -1,14 +1,9 @@
 <?php
 ini_set("display_errors", "1");
 error_reporting(E_ALL);
-if(isset($_REQUEST['pnm']))
-{
-$page_title=base64_decode($_REQUEST['pnm']);
-}
-else
-{
-	$page_title="Group Entry";
-}
+
+	$page_title="Journal";
+
 include "membersonly.inc.php";
 $Members  = new isLogged(1);
 include "header.php";
@@ -23,7 +18,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
    return 'root';
 }
 ?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -69,14 +64,21 @@ function searchForId($id, $array,$chkfld,$sendfld) {
             <!-- /.box-header -->
             <!-- form start -->
               <div class="box-body">
-<form class="form-bordered" action="submit_ledger.php" method="POST">
+<form class="form-bordered" action="submit_income.php" method="POST" onsubmit="return val()">
 
 <div class="row">
-<div class="form-group col-md-6">
+<div class="form-group col-md-12">
 <label>
-<b><font color="#ed2618"></font>Primary : </b>
+<b><font color="#ed2618"></font>Date: </b>
 </label>
-<select class="form-control" name="pid" id="pid" required onchange="cgid(this.value)">
+<input type="text" readonly  class="form-control" value="<?php echo $date = date('d-m-Y');?>" style="width:100%">
+</div>
+
+<div class="form-group col-md-3">
+<label>
+<b><font color="#ed2618"></font>DEBIT : </b>
+</label>
+<select class="form-control" name="dr" id="dr" required onchange="hide(),cdeb(this.value)">
   <option value="">*****Select*****</option>
   <?php
 			
@@ -84,44 +86,91 @@ function searchForId($id, $array,$chkfld,$sendfld) {
       $op1['sl']=">,";
 
       $list1  = new Init_Table();
-      $list1->set_table("main_primary","sl");
+      $list1->set_table("main_ledger","sl");
       $row=$list1->search_custom($fld1,$op1,'',array('sl' => 'ASC'));
       $pdo= new MainPDO();
-      foreach ($row as $value) 
+      foreach ($row as $values) 
       {
 			?>
-  <option value="<?php echo $value['sl'];?>"><?php echo $value['pnm'];?></option>
+  <option value="<?php echo $values['sl'];?>"><?php echo $values['ldg'];?></option>
       <?php
       }
       ?>
 </select>
 </div>
-<div class="form-group col-md-6">
+<div class="form-group col-md-3">
 <label>
-<b><font color="#ed2618"></font>Group : </b>
+<b><font color="#ed2618"></font>Balance: </b>
 </label>
-<div id="cgid">
-<select class="form-control" name="gid" id="gid" required>
+<div id="cdeb">
+<input type="text" id="amt" name="amt" class="form-control" value="" style="width:100%" placeholder="Select Asset" readonly></div>
+</div>
+<div class="form-group col-md-3">
+<label>
+<b><font color="#ed2618"></font>CREDIT : </b>
+</label>
+<select class="form-control" name="cr" id="cr" required onchange="hide(),cred(this.value)">
   <option value="">*****Select*****</option>
+  <?php
+			
+      $fld1['sl']='0';
+      $op1['sl']=">,";
 
+      $list1  = new Init_Table();
+      $list1->set_table("main_ledger","sl");
+      $row=$list1->search_custom($fld1,$op1,'',array('sl' => 'ASC'));
+      $pdo= new MainPDO();
+      foreach ($row as $values) 
+      {
+			?>
+  <option value="<?php echo $values['sl'];?>"><?php echo $values['ldg'];?></option>
+      <?php
+      }
+      ?>
 </select>
-</div>
 
+</div>
+<div class="form-group col-md-3">
+<label>
+<b><font color="#ed2618"></font>Balance: </b>
+</label>
+<div id="cred">
+<input type="text" id="amt" name="amt" class="form-control" value="" style="width:100%" placeholder="Select Asset" readonly></div>
 </div>
 <div class="form-group col-md-6">
 <label>
-<b><font color="#ed2618"></font>Ledger Name : </b>
+<b><font color="#ed2618"></font>Amount: </b>
 </label>
-<input type="text" id="ldg" name="ldg" class="form-control" value="" style="width:100%" placeholder="Enter Ledger Name " required>
+<input type="text" id="amt" name="amt" class="form-control" value="" style="width:100%" placeholder="Enter Amount" required>
 </div>
+<div class="form-group col-md-6">
+<label>
+<b><font color="#ed2618"></font>Narration: </b>
+</label>
+<input type="text" id="nar" name="nar" class="form-control" value="" style="width:100%" placeholder="Enter Amount" required>
+</div>
+<p id="warn" style="color:red;"></p>
 <div class="form-group col-md-12" align="right">
 <br>
 <input type="submit" class="btn btn-success" value="SUBMIT">
 </div>
 </div>
-<input type="hidden" name="table_name" value="main_ledger">	 
-<input type="hidden" name="page_name" value="ledger.php">  
-
+<input type="hidden" name="type" >	 
+<input type="hidden" name="table_name" value="main_drcr">	 
+<input type="hidden" name="page_name" value="journal.php">  
+<input readonly type="hidden" id="voucher" name="voucher" class="form-control" value="
+<?php
+$fld['sl']='0';
+$op['sl']=">, ";
+$list  = new Init_Table();
+$list->set_table('main_drcr',"sl");
+$count=$list->row_count_custom($fld,$op,'',array('sl' => 'ASC'));
+date_default_timezone_set("asia/kolkata");
+$year = date('y');
+$month=date('m');
+echo $vou="v".$year.$month.$count;
+?>
+" style="width:100%">
 </form>
 </div>
 <!-- /.box body -->
@@ -207,18 +256,37 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 
 function show()
 {
-	$('#show').load("ledger_list.php").fadeIn('fast');
+	$('#show').load("openbal_list.php?type="+3).fadeIn('fast');
 }
 $(document).ready(function()
 {
 show();
 });
 
-    function cgid(value)
-    {
-            $('#cgid').load('calcgid.php?pid='+value).fadeIn('fast');
-    }
-	</script>
+function val(){
+    var cr=document.getElementById('cr').value;
+        var dr=document.getElementById('dr').value;
+        if(cr==dr){
+            text="Credit and Debit can not be same";
+                document.getElementById('warn').innerHTML=text;
+                return false;
+        }
+        }
+        function hide(){
+            var cr=document.getElementById('cr').value;
+        var dr=document.getElementById('dr').value;
+        if(cr!=dr){
+
+            document.getElementById('warn').innerHTML=""; 
+        }
+        }
+        function cdeb(a){
+            $('#cdeb').load('caldeb.php?a='+a).fadeIn('fast');
+        }
+        function cred(a){
+            $('#cred').load('calcred.php?a='+a).fadeIn('fast');
+        }
+</script>
 
 </body>
 </html>
