@@ -47,4 +47,4 @@ if($value['pid']==2){
     echo $credit-$debit;
 
 }
-?>" style="width:100%"  readonly></d
+?>" style="width:100%"  readonly>

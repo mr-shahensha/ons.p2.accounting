@@ -1,0 +1,71 @@
+Time : 12:24:53
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  pid = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE 0  :0  pid = :pid  ORDER BY sl ASC
+
+Time : 12:24:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  pid = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE 0  :0  pid = :pid  ORDER BY sl ASC
+
+Time : 12:24:31
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  pid = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE 0  :0  pid = :pid  ORDER BY sl ASC
+
+Time : 12:23:03
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  pid = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE 0  :0  pid = :pid  ORDER BY sl ASC
+
+Time : 12:18:13
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'cr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt  FROM main_drcr WHERE pid = :pid  cr = :cr   ORDER BY sl ASC
+
+Time : 11:42:12
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'cr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   cr = :cr   ORDER BY sl ASC
+
+Time : 11:28:13
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE cr = :cr  and dr = :dr  and ORDER BY sl ASC
+
+Time : 11:28:12
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE cr = :cr  and dr = :dr  and ORDER BY sl ASC
+
+Time : 11:27:53
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE cr = :cr  and dr = :dr  and ORDER BY sl ASC
+
+Time : 11:08:19
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  and pid=2 ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE pid  :pid  and pid=2 ORDER BY sl ASC
+
+Time : 11:07:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  and pid=2 ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE pid  :pid  and pid=2 ORDER BY sl ASC
+
+Time : 11:07:50
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  and pid=2 ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE pid  :pid  and pid=2 ORDER BY sl ASC
+
+Time : 11:07:50
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  and pid=2 ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE pid  :pid  and pid=2 ORDER BY sl ASC
+
+Time : 11:07:16
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  and pid=2 ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE pid  :pid  and pid=2 ORDER BY sl ASC
+
+Time : 11:05:44
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  and pid='2' ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE pid  :pid  and pid='2' ORDER BY sl ASC
+
+Time : 11:04:28
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  and pid='2' ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE pid  :pid  and pid='2' ORDER BY sl ASC
+
+Time : 11:02:40
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  and pid='2' ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE pid  :pid  and pid='2' ORDER BY sl ASC
+
+Time : 11:00:21
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  and pid='2' ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_ledger WHERE pid  :pid  and pid='2' ORDER BY sl ASC
