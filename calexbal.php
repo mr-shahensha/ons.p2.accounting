@@ -2,6 +2,20 @@
 include "include.class.php";
 
 $sl=$_REQUEST['a'];
+
+
+
+$fld['sl']=$sl;
+$op['sl']="=, ";
+
+$list  = new Init_Table();
+$list->set_table("main_ledger","sl");
+$ro=$list->search_custom($fld,$op,'',array('sl' => 'ASC'));
+$pdo= new MainPDO();
+foreach ($ro as $value) 
+{
+}
+
 $fld1['cr'] = $sl;
 $op1['cr'] = "=, ";
 $newamt=0;
@@ -25,4 +39,15 @@ foreach ($row0 as $res0) {
 	$debit = $res0['newamt0'];
 }
 ?>
-<input type="text" id="nar" name="nar" class="form-control" value="<?php echo $debit-$credit;?>" style="width:100%"  readonly></d
+<input type="text" id="nar" name="nar" class="form-control" value="<?php 
+
+if($value['pid']==1){
+    echo $debit-$credit;
+
+}
+if($value['pid']==2){
+    echo $credit-$debit;
+
+}
+
+?>" style="width:100%"  readonly></d

@@ -82,8 +82,8 @@ function searchForId($id, $array,$chkfld,$sendfld) {
   <option value="">*****Select*****</option>
   <?php
 			
-      $fld1['sl']='0';
-      $op1['sl']=">,";
+            $fld1['pid']='1';
+            $op1['pid']="=, or pid=2 ";
 
       $list1  = new Init_Table();
       $list1->set_table("main_ledger","sl");
@@ -97,6 +97,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
       }
       ?>
 </select>
+
 </div>
 <div class="form-group col-md-3">
 <label>
@@ -113,8 +114,8 @@ function searchForId($id, $array,$chkfld,$sendfld) {
   <option value="">*****Select*****</option>
   <?php
 			
-      $fld1['sl']='0';
-      $op1['sl']=">,";
+            $fld1['pid']='1';
+            $op1['pid']="=, or pid=2 ";
 
       $list1  = new Init_Table();
       $list1->set_table("main_ledger","sl");
@@ -128,7 +129,6 @@ function searchForId($id, $array,$chkfld,$sendfld) {
       }
       ?>
 </select>
-
 </div>
 <div class="form-group col-md-3">
 <label>

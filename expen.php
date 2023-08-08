@@ -262,7 +262,7 @@ show();
 
 function calbal(a){
   
-  $('#cbal').load('calbal.php?a='+a).fadeIn('fast');
+  $('#cbal').load('calexbal.php?a='+a).fadeIn('fast');
 }
 	</script>
 
