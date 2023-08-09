@@ -1,6 +1,0 @@
-Time : 11:34:35
-SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '2 ?  ORDER BY sl ASC' at line 1
-Raw SQL : SELECT * FROM main_primary WHERE sl 2 :sl  ORDER BY sl ASC
-
-Time : 11:05:45
-SQLSTATE[HY000] [1049] Unknown database 'ons.p2.ac'

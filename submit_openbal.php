@@ -18,7 +18,6 @@ $page_name=$_POST['page_name'];
 $_POST["type"]='0';
 
 
-
 if($drcr=="cr"){
     $fld['cr']=$lid;
     $op['cr']="=, and";
@@ -40,6 +39,7 @@ if($drcr=="dr"){
 
 $fld['amt']=$_POST['amt'];
 $op['amt']="=, ";
+
 $list  = new Init_Table();
 $list->set_table($tbl_nm,"sl");
 $count=$list->row_count_custom($fld,$op,'',array('sl' => 'ASC'));

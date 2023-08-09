@@ -7,7 +7,7 @@ $page_title=base64_decode($_REQUEST['pnm']);
 }
 else
 {
-	$page_title="Group Entry";
+	$page_title="Ledger Entry";
 }
 include "membersonly.inc.php";
 $Members  = new isLogged(1);

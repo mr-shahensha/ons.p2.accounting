@@ -59,31 +59,28 @@ $Members  = new isLogged(1);
                   
                   echo $value3['gnm'];?></td>
                   <td><?php echo $value['ldg'];?></td>
-						<td>
-						<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Edit</button>
+					<td>
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="get(<?php echo $sl;?>)">Edit</button>
 
-						<!-- Modal -->
-						<div id="myModal" class="modal fade" role="dialog">
-						<div class="modal-dialog">
+							<!-- Modal -->
+							<div id="myModal" class="modal fade" role="dialog">
+							<div class="modal-dialog">
 
-							<!-- Modal content-->
-							<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Modal Header</h4>
-							</div>
-							<div class="modal-body">
-								<p>Some text in the modal.</p>
-							</div>
+					<!-- Modal content-->
+					<div class="modal-content">
+					<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title" >Edit Ledger</h4>
+					</div>
+					<div class="modal-body">
+				  <div id="showmodal">
+
+				  </div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							</div>
 							</div>
-
 						</div>
 						</div>
-															<!-- <a href="ledger_edit.php?sl=<?php echo base64_encode($sl);?>"><input type="button" class="btn btn-primary btn-xs" value="Edit"> -->
-						</a>
 
 						</td>
 						</tr>
@@ -92,3 +89,11 @@ $Members  = new isLogged(1);
 				?>
 
 </table>
+
+<script>
+	function get(x){
+		$('#showmodal').load('ledger_modal.php?x='+x).fadeIn('fast');
+		$('#mymodal').modal('show');
+
+	}
+</script>

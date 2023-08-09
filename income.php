@@ -253,7 +253,7 @@ echo $vou="v".$year.$month.$count;
 
 function show()
 {
-	$('#show').load("openbal_list.php?type="+1).fadeIn('fast');
+	$('#show').load("income_list.php?type="+1).fadeIn('fast');
 }
 $(document).ready(function()
 {

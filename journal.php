@@ -149,7 +149,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 </label>
 <input type="text" id="nar" name="nar" class="form-control" value="" style="width:100%" placeholder="Enter Amount" required>
 </div>
-<p id="warn" style="color:red;"></p>
+
 <div class="form-group col-md-12" align="right">
 <br>
 <input type="submit" class="btn btn-success" value="SUBMIT">
@@ -175,6 +175,7 @@ echo $vou="v".$year.$month.$count;
 </div>
 <!-- /.box body -->
 </div>
+<p id="warn" style="color:red;"></p>
 
 <!-- /.box -->
 </div>  
@@ -256,7 +257,7 @@ echo $vou="v".$year.$month.$count;
 
 function show()
 {
-	$('#show').load("openbal_list.php?type="+3).fadeIn('fast');
+	$('#show').load("journal_list.php?type="+3).fadeIn('fast');
 }
 $(document).ready(function()
 {

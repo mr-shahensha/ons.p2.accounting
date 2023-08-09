@@ -1,0 +1,107 @@
+Time : 14:21:32
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  and  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl > :sl  type = :type  and  ORDER BY sl ASC
+
+Time : 14:21:28
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  and  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl > :sl  type = :type  and  ORDER BY sl ASC
+
+Time : 14:21:18
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE pid = :pid  type = :type  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:21:06
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  and  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl > :sl  type = :type  and  ORDER BY sl ASC
+
+Time : 14:18:34
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE pid = :pid  type = :type  and  sl > :sl  ORDER BY sl ASC
+
+Time : 11:18:03
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cr' in 'where clause'
+Raw SQL : SELECT count(*) FROM main_ledger WHERE cr = :cr  and dr = :dr  and amt = :amt   
+
+Time : 11:17:55
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cr' in 'where clause'
+Raw SQL : SELECT count(*) FROM main_ledger WHERE cr = :cr  and dr = :dr  and amt = :amt   
+
+Time : 11:16:34
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cr' in 'where clause'
+Raw SQL : SELECT count(*) FROM main_ledger WHERE cr = :cr  and dr = :dr  and amt = :amt   
+
+Time : 11:05:32
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dr' in 'where clause'
+Raw SQL : SELECT count(*) FROM main_ledger WHERE dr = :dr  and cr = :cr  and amt = :amt   
+
+Time : 11:03:55
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dr' in 'where clause'
+Raw SQL : SELECT count(*) FROM main_ledger WHERE dr = :dr  and cr = :cr  and amt = :amt   
+
+Time : 11:03:08
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cr' in 'where clause'
+Raw SQL : SELECT count(*) FROM main_ledger WHERE cr = :cr  and dr = :dr  and amt = :amt   
+
+Time : 11:00:02
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cr' in 'where clause'
+Raw SQL : SELECT count(*) FROM main_ledger WHERE cr = :cr  and dr = :dr  and amt = :amt   
+
+Time : 09:27:52
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dr' in 'where clause'
+Raw SQL : SELECT * FROM main_ledger WHERE dr = :dr  ORDER BY sl ASC
+
+Time : 09:26:55
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cr' in 'where clause'
+Raw SQL : SELECT * FROM main_ledger WHERE cr = :cr  ORDER BY sl ASC
+
+Time : 09:26:04
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cr' in 'where clause'
+Raw SQL : SELECT * FROM main_ledger WHERE cr = :cr  ORDER BY sl ASC
+
+Time : 09:18:17
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:17:35
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:16:23
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:16:03
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:14:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:13:32
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:12:25
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:12:19
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:11:45
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:10:28
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:09:57
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC
+
+Time : 09:09:17
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'type = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE sl = :sl  type = :type  ORDER BY sl ASC

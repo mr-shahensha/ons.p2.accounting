@@ -15,13 +15,13 @@ $_POST["edtm"]=date('Y-m-d H:i:s A');
 $tbl_nm=$_POST['table_name'];
 $page_name=$_POST['page_name'];
 
-
 $fld['pid']=$_POST['pid'];
 $op['pid']="=, and";
 $fld['gid']=$_POST['gid'];
 $op['gid']="=, and";
 $fld['ldg']=$_POST['ldg'];
 $op['ldg']="=, ";
+
 $list  = new Init_Table();
 $list->set_table($tbl_nm,"sl");
 $count=$list->row_count_custom($fld,$op,'',array('sl' => 'ASC'));

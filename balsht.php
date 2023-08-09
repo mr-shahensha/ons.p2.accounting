@@ -114,7 +114,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 			?>
             <tr>
 <td><?php echo $f;?></td>
-<td><?php echo $values['ldg'];?></td>
+<td><a href="ledger_heads.php?sl=<?php echo base64_encode($values['sl']);?>" ><?php echo $values['ldg'];?></a> </td>
 <?php
 $fld1y['cr'] = $values['sl'];
 $op1y['cr'] = "=, ";
@@ -198,7 +198,7 @@ $op10['dr'] = "=, ";
                   ?>
                   <tr>
       <td><?php echo $f;?></td>
-      <td><?php echo $values['ldg'];?></td>
+      <td><a href="ledger_heads.php?sl=<?php echo base64_encode($values['sl']);?>"> <?php echo $values['ldg'];?></a></td>
       <?php
       $fld1y['cr'] = $values['sl'];
       $op1y['cr'] = "=, ";

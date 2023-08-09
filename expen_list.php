@@ -7,18 +7,8 @@ $type=$_REQUEST['type'];
 ?>
  <?php
 
-		if($type==1){
-			$fld1['type']='1';
-			$op1['type']="=, and ";
-		}
-		if($type==0){
-			$fld1['type']='0';
-			$op1['type']="=, and ";
-		}	
-		if($type==2){
-			$fld1['type']='2';
-			$op1['type']="=, and ";
-		}
+	  $fld1['type']=$type;
+	  $op1['type']="=, and ";
       $fld1['sl']='0';
       $op1['sl']=">,";
 
@@ -30,9 +20,9 @@ $type=$_REQUEST['type'];
 							<table class="table">
 							<tr>
 							<th width="20%">SL</th>
-							<th width="20%">Ledger</th>
-							<th width="20%">Type</th>
-                            <th width="20%">Amount</th>
+							<th width="20%">Expenditure Head </th>
+							<th width="20%">From</th>
+                            <th width="20%">Balance</th>
 							<th width="20%">Action</th>
 							</tr>
 								<?php	
@@ -46,34 +36,31 @@ $type=$_REQUEST['type'];
 									<tr>
 									<td><?php echo $cnt;?></td>
 
-                                    <?php
-                        if($value['cr']!=-1){
-                        $fld2['sl']=$value['cr'];
-                        }
-                        if($value['dr']!=-1){
-                            $fld2['sl']=$value['dr'];
-                            }
-						$op2['sl']="=,";
-				  
-						$main_ledger  = new Init_Table();
-						$main_ledger->set_table("main_ledger","sl");
-						$row2=$main_ledger->search_custom($fld2,$op2,'',array('sl' => 'ASC'));
-						foreach ($row2 as $value2) 
-						{
-						}  
-                    ?>
-				  <td><?php echo $value2['ldg'];?></td>
-                  <td>
-                    <?php 
-                    if($value['cr']!=-1){
-                        echo "Credited";
+				  <td><?php
+                    $fld2['sl']=$value['dr'];
+                    $op2['sl']="=,";
+            
+                    $main_ledger  = new Init_Table();
+                    $main_ledger->set_table("main_ledger","sl");
+                    $row2=$main_ledger->search_custom($fld2,$op2,'',array('sl' => 'ASC'));
+                    foreach ($row2 as $value2) 
+                    {
                     }
-                     else if( $value['dr']!=-1){
-                            echo "Debited";
-                    }else{
-						echo "income !!";
-					}
-                    ?>
+                  
+                  echo $value2['ldg'];?></td>
+                  <td>
+                  <?php
+                    $fld2['sl']=$value['cr'];
+                    $op2['sl']="=,";
+            
+                    $main_ledger  = new Init_Table();
+                    $main_ledger->set_table("main_ledger","sl");
+                    $row2=$main_ledger->search_custom($fld2,$op2,'',array('sl' => 'ASC'));
+                    foreach ($row2 as $value2) 
+                    {
+                    }
+                  
+                  echo $value2['ldg'];?>
                   </td>
 
                   <td><?php echo $value['amt'];?></td>
@@ -109,7 +96,7 @@ $type=$_REQUEST['type'];
 </table>
 <script>
 	function get(x){
-		$('#showmodal').load('openbal_modal.php?x='+x).fadeIn('fast');
+		$('#showmodal').load('expen_modal.php?x='+x).fadeIn('fast');
 		$('#mymodal').modal('show');
 
 	}

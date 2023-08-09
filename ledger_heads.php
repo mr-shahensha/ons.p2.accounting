@@ -1,17 +1,23 @@
 <?php
 ini_set("display_errors", "1");
 error_reporting(E_ALL);
+$page_title="Ledger Heads";
 
-$page_title="Ledger";
+$sl=base64_decode($_REQUEST['sl']);
+
 include "membersonly.inc.php";
 $Members  = new isLogged(1);
 include "header.php";
-$sld=base64_decode($_REQUEST['sl']);
-$adtl  = new Init_Table();
-$adtl->set_table("main_ledger","sl");
-$row=$adtl->all();
-$row2=$adtl->search(array('sl'=>$sld));
-$pdo= new MainPDO();
+function searchForId($id, $array,$chkfld,$sendfld) {
+
+   foreach ($array as $val) 
+   {
+       if ($val[$chkfld]==$id) {
+           return $val[$sendfld];
+       }
+   }
+   return 'root';
+}
 ?>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
@@ -38,12 +44,24 @@ $pdo= new MainPDO();
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?php echo $page_title;?>
+        <?php 
+                 $fld10['sl']=$sl;
+                 $op10['sl']="=,";
+           
+                 $list10  = new Init_Table();
+                 $list10->set_table("main_ledger","sl");
+                 $row0=$list10->search_custom($fld10,$op10,'',array('sl' => 'ASC'));
+                 $pdo= new MainPDO();
+                 foreach ($row0 as $values) 
+                 {}
+           
+           echo $values['ldg'];
+        ?>
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active"><?php echo $page_title;?> </li>
+        <li class="active"><?php echo $page_title;?></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -53,80 +71,94 @@ $pdo= new MainPDO();
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><?php echo $page_title;?> Edit</h3>
+              <h3 class="box-title"><?php
+              
+              echo $sl; //$values['ldg'];?> Lists</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
               <div class="box-body">
-<form class="form-bordered" action="submit_ledger.php" method="POST">
 
 <div class="row">
-<div class="form-group col-md-6">
-<label>
-<b><font color="#ed2618"></font>Primary : </b>
-</label>
-<select class="form-control" name="pid" id="pid" required>
-  <option value="">*****Select*****</option>
+<div class="form-group col-md-12">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">CREDIT</th>
+      <th scope="col">DEBIT</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        
+     <table class="table table-striped">
+  <thead>
+    <tr>
+    <th scope="col">SL</th>
+    <th scope="col">FROM</th>
+    <th scope="col">AMOUNT</th>
+      <th scope="col">DATE</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Mark</td>
+    </tr>
+  </tbody>
+</table>
+
+      </td>
+      <td>
+      <table class="table table-striped">
+  <thead>
+    <tr>
+    <th scope="col">SL</th>
+    <th scope="col">FROM</th>
+    <th scope="col">AMOUNT</th>
+      <th scope="col">DATE</th>
+
+    </tr>
+  </thead>
+  <tbody>
   <?php
-			
-      $fld1['sl']='0';
-      $op1['sl']=">,";
 
-      $list1  = new Init_Table();
-      $list1->set_table("main_primary","sl");
-      $row=$list1->search_custom($fld1,$op1,'',array('sl' => 'ASC'));
-      $pdo= new MainPDO();
-      foreach ($row as $value) 
-      {
-			?>
-  <option <?php if($value['sl']==$row2[0]['pid']){echo "selected";}?> value="<?php echo $value['sl'];?>"><?php echo $value['pnm'];?></option>
-      <?php
-      }
+$fld1['type']=1;
+$op1['type']="=, and ";
+$fld1['sl']='0';
+$op1['sl']=">,";
+
+$list1  = new Init_Table();
+$list1->set_table("main_drcr","sl");
+$row=$list1->search_custom($fld1,$op1,'',array('sl' => 'ASC'));
+$f=0;
+  $path1="";
+  foreach ($row as $value) 
+  {
+  $f++;
       ?>
-</select>
-</div>
-<div class="form-group col-md-6">
-<label>
-<b><font color="#ed2618"></font>Test Type : </b>
-</label>
-<input type="text" id="gnm" name="gnm" class="form-control" value="<?php
-
-$fld3['sl']=$row2[0]['gid'];
-$op3['sl']="=,";
-
-$main_group  = new Init_Table();
-$main_group->set_table("main_group","sl");
-$row3=$main_group->search_custom($fld3,$op3,'',array('sl' => 'ASC'));
-foreach ($row3 as $value3) 
-{
+    <tr>
+      <th><?php echo $f;?></th>
+      <th><?php
+echo $sl;
+      ?></th>
+      <th><?php echo $value['amt'];?></th>
+      <td><?php echo $value['edt'];?></td>
+    </tr>
+    <?php
 }
-
-echo $value['gnm'];;
-
-?>" style="width:100%" placeholder="Enter Test Type" required>
+    ?>
+  </tbody>
+</table>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
-<div class="form-group col-md-6">
-<label>
-<b><font color="#ed2618"></font>Test Type : </b>
-</label>
-<input type="text" id="gnm" name="gnm" class="form-control" value="<?php echo $row2[0]['ldg'];?>" style="width:100%" placeholder="Enter Test Type" required>
-</div>
-<div class="form-group col-md-12" align="right">
-<br>
-<input type="submit" class="btn btn-warning" value="Update">
-</div>
-</div>
-<input type="hidden" name="table_name" value="main_ledger">   
-<input type="hidden" name="page_name" value="ledger.php">  
-<input type="hidden" name="sl" value="<?php echo $sld;?>">  
-
-</form>
-</div>
-<!-- /.box body -->
-</div>
-
-<!-- /.box -->
-</div>   				  
+</div>  				  
 	</div>
 </section>
     <!-- /.content -->
@@ -183,9 +215,6 @@ echo $value['gnm'];;
 <script src="chosen.jquery.js" type="text/javascript"></script>
 <script src="prism.js" type="text/javascript" charset="utf-8"></script>
 	
-	<script>
-
-	</script>
 
 
 </body>
