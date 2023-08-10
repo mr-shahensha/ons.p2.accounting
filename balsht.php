@@ -146,7 +146,6 @@ $op10['dr'] = "=, ";
       $main_drcr->set_table("main_drcr","sl");
       $row=$main_drcr->search_custom($fld10,$op10,'',array('sl' => 'ASC'));
       $pdo= new MainPDO();
-      $f=0;
 
       foreach ($row as $values) 
       { 
@@ -188,16 +187,16 @@ $op10['dr'] = "=, ";
             $list1->set_table("main_ledger","sl");
             $row=$list1->search_custom($fld1,$op1,'',array('sl' => 'ASC'));
             $pdo= new MainPDO();
-            $f=0;
+            $t=0;
             $total=0;
             foreach ($row as $values) 
             {    
-                       $f++;
+                       $t++;
                 
        
                   ?>
                   <tr>
-      <td><?php echo $f;?></td>
+      <td><?php echo $t;?></td>
       <td><a href="ledger_heads.php?sl=<?php echo base64_encode($values['sl']);?>"> <?php echo $values['ldg'];?></a></td>
       <?php
       $fld1y['cr'] = $values['sl'];

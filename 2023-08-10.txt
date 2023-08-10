@@ -1,0 +1,107 @@
+Time : 14:53:50
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by edt ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE cr = :cr  and  sl > :sl   and edt between '2023-04-01' and '2023-08-10' and order by edt ORDER BY sl ASC
+
+Time : 14:53:36
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE cr = :cr  and  sl > :sl   and edt between '2023-04-01' and '2023-08-10' order by edt ORDER BY sl ASC
+
+Time : 14:20:23
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and edt between  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:19:41
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and edt between  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:19:40
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and edt between  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:19:40
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and edt between  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:19:40
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and edt between  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:10:39
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and edt between  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:10:38
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and edt between  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:10:34
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and edt between  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:34
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:22
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:22
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:22
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:21
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:21
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:17
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:17
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:16
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:16
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:10
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 14:08:10
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?  and  sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE dr = :dr  and date between edt = :edt  and  sl > :sl  ORDER BY sl ASC
+
+Time : 06:53:06
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  and  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE type = :type  and  cr = :cr  and  sl > :sl  dr = :dr  and  ORDER BY sl ASC
+
+Time : 06:49:20
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE type = :type  and  sl > :sl  dr = :dr  ORDER BY sl ASC
