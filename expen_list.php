@@ -28,6 +28,7 @@ $type=$_REQUEST['type'];
 								<?php	
 								$cnt=0;
                 $pdo= new MainPDO();
+				$total=0;
 								foreach ($row as $value) 
 								{
 									$cnt++;
@@ -90,8 +91,12 @@ $type=$_REQUEST['type'];
 						</td>
 						</tr>
 							<?php
+							$total=$total+$value['amt'];
 						}
 					?>
+					<tr>
+						<td><b>Total :  </b> <?php echo $total;?></td>
+					</tr>
 
 </table>
 <script>

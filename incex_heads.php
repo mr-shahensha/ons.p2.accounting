@@ -1,7 +1,7 @@
 <?php
 ini_set("display_errors", "1");
 error_reporting(E_ALL);
-$page_title = "Ledger Heads";
+$page_title = "Income & Expenditure";
 
 $sl = base64_decode($_REQUEST['sl']);
 
@@ -61,6 +61,7 @@ function searchForId($id, $array, $chkfld, $sendfld)
       }
 
       echo $values['ldg'];
+
       ?>
       <small>Control panel</small>
     </h1>
@@ -121,7 +122,8 @@ function searchForId($id, $array, $chkfld, $sendfld)
               </div>
               <div class="form-group col-md-12" align="right">
                 <br>
-                <input type="hidden" value="<?php echo $sl; ?>" id="sl" onclick="cldt()">
+                <input type="hidden" value="<?php echo $sl; ?>" id="sl">
+                <input type="hidden" value="<?php echo $values['pid'];?>" id="pid">
                 <input type="button" class="btn btn-success" value="SEARCH" onclick="cldt()">
               </div>
             </div>
@@ -202,11 +204,11 @@ $(document).ready(function(){
 });
 
               function cldt() {
-             
+                var pid = document.getElementById('pid').value; 
                 var sl = document.getElementById('sl').value;   
                 var d1 = document.getElementById('d1').value;
                 var d2 = document.getElementById('d2').value;
-                $('#showdata4').load('ledger_head_data.php?d1=' + d1 + '&d2=' + d2 + '&sl=' + sl).fadeIn('slow');
+                $('#showdata4').load('inex_head_data.php?d1=' + d1 + '&d2=' + d2 + '&sl=' + sl+'&pid='+pid).fadeIn('slow');
               }
             </script>
 

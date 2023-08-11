@@ -1,0 +1,195 @@
+Time : 11:33:49
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE 0  :0  dr = :dr   ORDER BY sl ASC
+
+Time : 11:32:36
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE 0  :0  dr = :dr   ORDER BY sl ASC
+
+Time : 11:32:35
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE 0  :0  dr = :dr   ORDER BY sl ASC
+
+Time : 11:32:25
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?  dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT * FROM main_drcr WHERE 0  :0  dr = :dr   ORDER BY sl ASC
+
+Time : 11:31:12
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 11:30:40
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 11:28:06
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 11:28:01
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 11:16:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 11:15:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 11:15:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 11:12:20
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 09:21:13
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 09:20:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE cr = :cr   dr = :dr   ORDER BY sl ASC
+
+Time : 08:38:21
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:38:08
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:36:59
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:36:52
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:36:49
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:36:49
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:36:48
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:36:48
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:36:47
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:36:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:34:46
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:34:45
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:34:45
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:34:45
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:34:45
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:34:45
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:34:44
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:32:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:21:58
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:21:58
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:21:57
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 08:21:56
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE dr = :dr   and  ORDER BY sl ASC
+
+Time : 07:25:06
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?    ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr    ORDER BY sl ASC
+
+Time : 07:24:56
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?    ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr    ORDER BY sl ASC
+
+Time : 07:24:54
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?    ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr    ORDER BY sl ASC
+
+Time : 07:20:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  and edt < '2023-04-01'  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr  and edt < '2023-04-01'  ORDER BY sl ASC
+
+Time : 07:20:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  and edt < '2023-04-01'  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr  and edt < '2023-04-01'  ORDER BY sl ASC
+
+Time : 07:20:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  and edt < '2023-04-01'  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr  and edt < '2023-04-01'  ORDER BY sl ASC
+
+Time : 07:20:36
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  and edt < '2023-04-01'  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr  and edt < '2023-04-01'  ORDER BY sl ASC
+
+Time : 07:20:36
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  and edt < '2023-04-01'  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr  and edt < '2023-04-01'  ORDER BY sl ASC
+
+Time : 07:20:35
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  and edt < '2023-04-01'  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr  and edt < '2023-04-01'  ORDER BY sl ASC
+
+Time : 07:20:04
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  and edt < '2023-04-01'  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr  and edt < '2023-04-01'  ORDER BY sl ASC
+
+Time : 07:18:56
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sl > ?  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt  FROM main_drcr WHERE cr = :cr  and edt < '2023-04-01'  sl > :sl  ORDER BY sl ASC
+
+Time : 07:16:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '< '2023-04-01' edt < ?   ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt  FROM main_drcr WHERE sl > :sl  and  < '2023-04-01' edt < :edt   ORDER BY sl ASC
+
+Time : 06:50:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dr = ?  and edt < '2023-04-01'  ORDER BY sl ASC' at line 1
+Raw SQL : SELECT SUM(amt) as newamt0  FROM main_drcr WHERE sl = :sl  dr = :dr  and edt < '2023-04-01'  ORDER BY sl ASC
