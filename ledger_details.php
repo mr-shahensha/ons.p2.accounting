@@ -7,7 +7,7 @@ $page_title=base64_decode($_REQUEST['pnm']);
 }
 else
 {
-	$page_title="Balance Sheet ";
+	$page_title="Group Entry";
 }
 include "membersonly.inc.php";
 $Members  = new isLogged(1);
@@ -23,7 +23,6 @@ function searchForId($id, $array,$chkfld,$sendfld) {
    return 'root';
 }
 ?>
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -71,59 +70,81 @@ function searchForId($id, $array,$chkfld,$sendfld) {
               <div class="box-body">
 
 <div class="row">
-<div class="form-group col-md-12">
-                <div class="form-group col-md-6">
-                  <label>
-                    <b>
-                      <font color="#ed2618"></font>From Date :
-                    </b>
-                  </label>
-                  <?php
-                  $date = date('Y-m-d');
-                  $_POST["edtm"] = date('Y-m-d H:i:s A');
+<div class="form-group col-md-4">
+<label>
+<b><font color="#ed2618"></font>Ledger name : </b>
+</label>
+<select class="form-control" name="sl" id="sl" required>
+  <option value="">*****Select*****</option>
+  <?php
+			
+      $fld1['sl']='0';
+      $op1['sl']=">,";
 
-                  $yr = date('Y');
-                  $mnt = date('m');
-                  $day = date('d');
-                  if ($mnt < 4) {
-                    $nyr = $yr - 1;
-                    $cdate = $nyr . '-' . $mnt . '-' . $day;
-                  }
-                  if ($mnt > 4) {
-                    $cdate = $yr . '-04-01';
-                  }
-                  ?>
-                  <input class="form-control" type="date" value="<?php echo $cdate; ?>" name="d1" id="d1">
-                </div>
-                <div class="form-group col-md-6">
-                  <label>
-                    <b>
-                      <font color="#ed2618"></font>To Date :
-                    </b>
-                  </label>
-                  <input class="form-control" type="date" value="<?php echo $date; ?>" name="d2" id="d2">
-                </div>
-              </div>
-              <div class="form-group col-md-12" align="right">
-                <br>
-                <input type="button" class="btn btn-success" value="SEARCH" onclick="cldt()">
-              </div>
-            </div>
-            <!-- ***Show Data Start*** -->
-<div class="form-group col-md-12">
-<div id="showdata">
-
+      $list1  = new Init_Table();
+      $list1->set_table("main_ledger","sl");
+      $row=$list1->search_custom($fld1,$op1,'',array('sl' => 'ASC'));
+      $pdo= new MainPDO();
+      foreach ($row as $value) 
+      {
+			?>
+  <option value="<?php echo $value['sl'];?>"><?php echo $value['ldg'];?></option>
+      <?php
+      }
+      ?>
+</select>
 </div>
+<div class="form-group col-md-4">
+<label>
+<b><font color="#ed2618"></font>From Date : </b>
+</label>
+<input type="date" id="d1" name="d1" class="form-control" value="" style="width:100%" required>
 </div>
-            <!-- ***Show Data End*** -->
-
+<div class="form-group col-md-4">
+<label>
+<b><font color="#ed2618"></font>To Date : </b>
+</label>
+<input type="date" id="d2" name="d2" class="form-control" value="" style="width:100%" required>
 </div>
 
+<div class="form-group col-md-3" id="alt" style="display:none;">
+<div class="alert alert-danger" role="alert">
+Complete all the details
+</div>
+</div>
 
+<div class="form-group col-md-12" align="right">
+<br>
+<input type="submit" class="btn btn-success" value="SEARCH" onclick="show()">
+</div>
+</div>
+<input type="hidden" name="table_name" value="main_drcr">	 
+<input type="hidden" name="page_name" value="ledger_details.php">  
+
+</form>
 </div>
 <!-- /.box body -->
 </div>
 
+<!-- /.box -->
+</div>  
+	<div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title"><?php echo $page_title;?> List</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+              <div class="box-body" id="show">
+			 
+	
+				    </div>
+          <!-- /.box body -->
+        </div>
+          <!-- /.box -->
+	</div>  				  
+	</div>
 </section>
     <!-- /.content -->
   </div>
@@ -136,19 +157,6 @@ function searchForId($id, $array,$chkfld,$sendfld) {
 
 </div>
 <!-- ./wrapper -->
-
-<script>
-  $(document).ready(function(){
-  cldt();
-});
-
-function cldt() {
-                var d1 = document.getElementById('d1').value;
-                var d2 = document.getElementById('d2').value;
-                $('#showdata').load('balsht_table.php?d1=' + d1 + '&d2=' + d2).fadeIn('fast');
-              }
-            </script>
-
 
 <!-- jQuery 3 -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -192,6 +200,30 @@ function cldt() {
 <script src="chosen.jquery.js" type="text/javascript"></script>
 <script src="prism.js" type="text/javascript" charset="utf-8"></script>
 	
+	<script>
+
+
+
+function show()
+{
+  var sl=document.getElementById('sl').value;
+  var d1=document.getElementById('d1').value;
+  var d2=document.getElementById('d2').value;
+  if(sl=="" || d1=="" || d2=="")
+  {
+    document.getElementById('alt').style.display="block";
+    document.getElementById('show').style.display="none";
+
+  }else{
+    document.getElementById('alt').style.display="none";
+    $('#show').load("call_led_del.php?sl="+sl+"&d1="+d1+"&d2="+d2).fadeIn('fast');
+
+  }
+ 
+}
+
+
+	</script>
 
 </body>
 </html>
