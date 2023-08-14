@@ -20,19 +20,16 @@ foreach ($rooz as $valueo) {
         <th colspan="2"><b>Opening Balance : 
         <?php
            if($valueo['pid']==1){ 
-                    $fld1['dr'] = $sl;
-                    $op1['dr'] = "=, and ";
-                    $fld1['sl'] = '0';
-                    $op1['sl'] = ">,  and edt < '$d1'";
+                //     $flde['dr'] = $sl;
+                //     $ope['dr'] = "=, and and edt < '$d1'";
+                //     $main_drcre = new Init_Table();
+                //     $main_drcre->set_table("main_drcr", "sl");
+                //     $fld0 = array("SUM(amt) as newamt0 ");
+                //     $rowe = $main_drcre->search_custom_ultra($flde, $ope, '', array('sl' => 'ASC'), $fld0);
 
-
-                    $main_drcr = new Init_Table();
-                    $main_drcr->set_table("main_drcr", "sl");
-                    $ro1 = $main_drcr->search_custom($fld1, $op1, '', array('sl' => 'ASC'));
-
-                    foreach ($ro1 as $valuex1) {
-                }
-                
+                //     foreach ($rowe as $valuee) {
+                // }
+                // echo $valuee['newamt0'];
             }
            if($valueo['pid']==2){ 
             } 
@@ -108,7 +105,21 @@ foreach ($rooz as $valueo) {
 <tr>
 <td><?php echo  $f1;?></td>
 <td><?php echo  $valuex1['edt'];?></td>
-<td><?php echo  $valuex1['cr'];?></td>
+<td><?php
+
+          $fld1x['sl'] =$valuex1['cr'];
+          $op1x['sl'] = "=,";
+
+          $main_ledger = new Init_Table();
+          $main_ledger->set_table("main_ledger", "sl");
+          $rowx = $main_ledger->search_custom($fld1x, $op1x, '', array('sl' => 'ASC'));
+          $pdo = new MainPDO();
+          foreach ($rowx as $valuesx) {
+          }
+
+
+          echo $valuesx['ldg'];
+  ?></td>
 <td><?php echo  $valuex1['amt'];?></td>
 </tr>
 <?php 
@@ -141,7 +152,20 @@ $total=$total+$valuex1['amt'];
 <tr>
 <td><?php echo  $f;?></td>
 <td><?php echo  $valuex['edt'];?></td>
-<td><?php echo  $valuex['dr'];?></td>
+<td><?php
+          $fld1x['sl'] = $valuex['dr'];
+          $op1x['sl'] = "=,";
+
+          $main_ledger = new Init_Table();
+          $main_ledger->set_table("main_ledger", "sl");
+          $rowx = $main_ledger->search_custom($fld1x, $op1x, '', array('sl' => 'ASC'));
+          $pdo = new MainPDO();
+          foreach ($rowx as $valuesx) {
+          }
+
+
+          echo $valuesx['ldg'];
+?></td>
 <td><?php echo  $valuex['amt'];?></td>
 </tr>
 <?php
@@ -173,7 +197,20 @@ $total1=$total1+$valuex['amt'];
 <tr>
 <td><?php echo  $f;?></td>
 <td><?php echo  $valuex['edt'];?></td>
-<td><?php echo  $valuex['dr'];?></td>
+<td><?php
+          $fld1x['sl'] = $valuex['dr'];
+          $op1x['sl'] = "=,";
+
+          $main_ledger = new Init_Table();
+          $main_ledger->set_table("main_ledger", "sl");
+          $rowx = $main_ledger->search_custom($fld1x, $op1x, '', array('sl' => 'ASC'));
+          $pdo = new MainPDO();
+          foreach ($rowx as $valuesx) {
+          }
+
+
+          echo $valuesx['ldg'];
+  ?></td>
 <td><?php echo  $valuex['amt'];?></td>
 </tr>
 <?php
@@ -208,7 +245,21 @@ $total1=$total1+$valuex['amt'];
 <tr>
 <td><?php echo  $f1;?></td>
 <td><?php echo  $valuex1['edt'];?></td>
-<td><?php echo  $valuex1['cr'];?></td>
+<td><?php
+          $fld1x['sl'] = $valuex1['cr'];
+          $op1x['sl'] = "=,";
+
+          $main_ledger = new Init_Table();
+          $main_ledger->set_table("main_ledger", "sl");
+          $rowx = $main_ledger->search_custom($fld1x, $op1x, '', array('sl' => 'ASC'));
+          $pdo = new MainPDO();
+          foreach ($rowx as $valuesx) {
+          }
+
+
+          echo $valuesx['ldg'];
+
+?></td>
 <td><?php echo  $valuex1['amt'];?></td>
 </tr>
 <?php 
@@ -276,7 +327,17 @@ $total=$total+$valuex1['amt'];
 <tr>
 <td><?php echo  $f;?></td>
 <td><?php echo  $valuex['edt'];?></td>
-<td><?php echo  $valuex['dr'];?></td>
+<td><?php
+            $fld1x['sl'] = $valuex['dr'];
+            $op1x['sl'] = "=,";
+
+            $main_ledger = new Init_Table();
+            $main_ledger->set_table("main_ledger", "sl");
+            $rowx = $main_ledger->search_custom($fld1x, $op1x, '', array('sl' => 'ASC'));
+            $pdo = new MainPDO();
+            foreach ($rowx as $valuesx) {
+            }
+echo  $valuesx['ldg'];?></td>
 <td><?php echo  $valuex['amt'];?></td>
 </tr>
 <?php
@@ -309,7 +370,17 @@ $total1=$total1+$valuex['amt'];
 <tr>
 <td><?php echo  $f1;?></td>
 <td><?php echo  $valuex1['edt'];?></td>
-<td><?php echo  $valuex1['cr'];?></td>
+<td><?php
+            $fld1x['sl'] = $valuex1['cr'];
+            $op1x['sl'] = "=,";
+
+            $main_ledger = new Init_Table();
+            $main_ledger->set_table("main_ledger", "sl");
+            $rowx = $main_ledger->search_custom($fld1x, $op1x, '', array('sl' => 'ASC'));
+            $pdo = new MainPDO();
+            foreach ($rowx as $valuesx) {
+            }
+echo  $valuesx['ldg'];?></td>
 <td><?php echo  $valuex1['amt'];?></td>
 </tr>
 <?php 

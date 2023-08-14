@@ -23,6 +23,7 @@ function searchForId($id, $array,$chkfld,$sendfld) {
    return 'root';
 }
 ?>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
