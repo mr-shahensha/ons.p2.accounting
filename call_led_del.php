@@ -19,23 +19,127 @@ foreach ($rooz as $valueo) {
     <tr>
         <th colspan="2"><b>Opening Balance : 
         <?php
+                 // pid==1
            if($valueo['pid']==1){ 
-                //     $flde['dr'] = $sl;
-                //     $ope['dr'] = "=, and and edt < '$d1'";
-                //     $main_drcre = new Init_Table();
-                //     $main_drcre->set_table("main_drcr", "sl");
-                //     $fld0 = array("SUM(amt) as newamt0 ");
-                //     $rowe = $main_drcre->search_custom_ultra($flde, $ope, '', array('sl' => 'ASC'), $fld0);
+            // debit
+            $val=0;
 
-                //     foreach ($rowe as $valuee) {
-                // }
-                // echo $valuee['newamt0'];
+                    $flde['dr'] = $sl;
+                    $ope['dr'] = "=, and edt < '$d1'";
+                    $main_drcre = new Init_Table();
+                    $main_drcre->set_table("main_drcr", "sl");
+                    $fld0 = array("SUM(amt) as newamt0 ");
+                    $rowe = $main_drcre->search_custom_ultra($flde, $ope, '', array('sl' => 'ASC'), $fld0);
+                    $counte = $main_drcre->row_count_custom($flde, $ope, '', array('sl' => 'ASC'));
+                   
+                    foreach ($rowe as $valuee) {
+                }
+                $debite=$valuee['newamt0'];
+
+                // credit
+
+                $fldf['cr'] = $sl;
+                $opf['cr'] = "=, and edt < '$d1'";
+                $main_drcrf = new Init_Table();
+                $main_drcrf->set_table("main_drcr", "sl");
+                $fld2 = array("SUM(amt) as newamt1 ");
+                $rowf = $main_drcrf->search_custom_ultra($fldf, $opf, '', array('sl' => 'ASC'), $fld2);
+                $countf = $main_drcrf->row_count_custom($fldf, $opf, '', array('sl' => 'ASC'));
+               
+                foreach ($rowf as $valuef) {
+            }
+            $creditf=$valuef['newamt1'];
+           echo $val=$debite-$creditf;
+
+               if($counte>0 && $countf>0 ){
+
+            }
+            else{
+                echo "000";
+            }
+
+            // pid==2
+
             }
            if($valueo['pid']==2){ 
+                  // debit
+                  $val=0;
+
+                  $flde['dr'] = $sl;
+                  $ope['dr'] = "=, and edt < '$d1'";
+                  $main_drcre = new Init_Table();
+                  $main_drcre->set_table("main_drcr", "sl");
+                  $fld0 = array("SUM(amt) as newamt0 ");
+                  $rowe = $main_drcre->search_custom_ultra($flde, $ope, '', array('sl' => 'ASC'), $fld0);
+                  $counte = $main_drcre->row_count_custom($flde, $ope, '', array('sl' => 'ASC'));
+                 
+                  foreach ($rowe as $valuee) {
+              }
+              $debite=$valuee['newamt0'];
+
+              // credit
+
+              $fldf['cr'] = $sl;
+              $opf['cr'] = "=, and edt < '$d1'";
+              $main_drcrf = new Init_Table();
+              $main_drcrf->set_table("main_drcr", "sl");
+              $fld2 = array("SUM(amt) as newamt1 ");
+              $rowf = $main_drcrf->search_custom_ultra($fldf, $opf, '', array('sl' => 'ASC'), $fld2);
+              $countf = $main_drcrf->row_count_custom($fldf, $opf, '', array('sl' => 'ASC'));
+             
+              foreach ($rowf as $valuef) {
+          }
+          $creditf=$valuef['newamt1'];
+         echo $val=$creditf-$debite;
+
+             if($counte>0 && $countf>0 ){
+
+          }
+          else{
+              echo "000";
+          }
+
             } 
-            if($valueo['pid']==3){ 
+            // pid==3
+            if($valueo['pid']==3){
+                $flde['cr'] = $sl;
+                $ope['cr'] = "=, and edt < '$d1'";
+                $main_drcre = new Init_Table();
+                $main_drcre->set_table("main_drcr", "sl");
+                $fld0 = array("SUM(amt) as newamt0 ");
+                $rowe = $main_drcre->search_custom_ultra($flde, $ope, '', array('sl' => 'ASC'), $fld0);
+                $counte = $main_drcre->row_count_custom($flde, $ope, '', array('sl' => 'ASC'));
+               
+                foreach ($rowe as $valuee) {
+            }
+           echo $debite=$valuee['newamt0'];
+            if($counte>0){
+
+            }
+            else{
+                echo "000";
+            }
             } 
+            // pid==4
             if($valueo['pid']==4){ 
+                $fldf['dr'] = $sl;
+                $opf['dr'] = "=, and edt < '$d1'";
+                $main_drcrf = new Init_Table();
+                $main_drcrf->set_table("main_drcr", "sl");
+                $fld2 = array("SUM(amt) as newamt1 ");
+                $rowf = $main_drcrf->search_custom_ultra($fldf, $opf, '', array('sl' => 'ASC'), $fld2);
+                $countf = $main_drcrf->row_count_custom($fldf, $opf, '', array('sl' => 'ASC'));
+               
+                foreach ($rowf as $valuef) {
+            }
+           echo $creditf=$valuef['newamt1'];
+  
+               if( $countf>0 ){
+  
+            }
+            else{
+                echo "000";
+            }
             }
         ?>
 
