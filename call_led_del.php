@@ -507,10 +507,10 @@ $total=$total+$valuex1['amt'];
 <tr>
     <td><b> Current Balance : <?php 
             if($valueo['pid']==1){     
-                echo $total-$total1;
+                echo ($val+$total)-$total1;
             }
             if($valueo['pid']==2){     
-                echo $total1-$total;
+                echo ($val+$total1)-$total;
 
             }
             if($valueo['pid']==3){ 
